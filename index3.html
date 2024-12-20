@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Home Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <section class="hero-section text-white py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-5xl font-bold mb-4">Welcome to Our Martial Arts Club</h1>
+      <p class="text-lg">Empowering individuals through self-defense and martial arts.</p>
+    </div>
+  </section>
+
+  <section class="py-12 bg-white text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4 text-red-600">About Us</h2>
+      <p class="text-lg mb-6 text-gray-700">
+        Our club is dedicated to building confidence, community, and self-defense skills.
+        Embrace strength, discipline, and growth through martial arts training.
+      </p>
+    </div>
+  </section>
+
+  <section class="events-section py-12 bg-cover bg-center text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Upcoming Events</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-red-700 p-6 rounded-lg shadow-lg bg-opacity-90">
+          <h3 class="text-xl font-bold mb-2">Self-Defense Workshop</h3>
+          <p class="mb-4">Learn self-defense techniques on <strong>October 21</strong> with expert trainers.</p>
+          <button onclick="showAlert('Registered for Self-Defense Workshop')" class="bg-white text-red-700 py-2 px-4 rounded-lg hover:bg-gray-100">Register</button>
+        </div>
+        <div class="bg-red-700 p-6 rounded-lg shadow-lg bg-opacity-90">
+          <h3 class="text-xl font-bold mb-2">Community Clean-Up</h3>
+          <p class="mb-4">Join us for a community clean-up day on <strong>November 5</strong>.</p>
+          <button onclick="showAlert('Registered for Community Clean-Up')" class="bg-white text-red-700 py-2 px-4 rounded-lg hover:bg-gray-100">Register</button>
+        </div>
+        <div class="bg-red-700 p-6 rounded-lg shadow-lg bg-opacity-90">
+          <h3 class="text-xl font-bold mb-2">Annual Club Meetup</h3>
+          <p class="mb-4">Our annual meet-up is scheduled for <strong>December 15</strong>. Be a part of it!</p>
+          <button onclick="showAlert('Registered for Annual Club Meetup')" class="bg-white text-red-700 py-2 px-4 rounded-lg hover:bg-gray-100">Register</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="recent-activities-section py-12 text-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-red-600">Recent Activities</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-gray-300 p-4 rounded-lg">
+          <img src="activity1.jpg" alt="Activity 1" class="rounded-md mb-4 w-full">
+          <p>Our recent self-defense session had over 100 participants!</p>
+        </div>
+        <div class="bg-gray-300 p-4 rounded-lg">
+          <img src="activity2.jpg" alt="Activity 2" class="rounded-md mb-4 w-full">
+          <p>We hosted a local park clean-up for community bonding.</p>
+        </div>
+        <div class="bg-gray-300 p-4 rounded-lg">
+          <img src="activity3.jpg" alt="Activity 3" class="rounded-md mb-4 w-full">
+          <p>The annual meetup inspired members with powerful discussions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="quick-links-section py-12 bg-gray-100 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4 text-red-600">Quick Links</h2>
+      <div class="flex justify-center space-x-4">
+        <button onclick="navigateTo('membership.html')" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Membership Sign-Up</button>
+        <button onclick="navigateTo('contact.html')" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Contact Us</button>
+        <button onclick="navigateTo('sessions.html')" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Self-Defense Sessions</button>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
