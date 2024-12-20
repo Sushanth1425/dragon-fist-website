@@ -1,0 +1,18 @@
+.hero-section {
+    background: url('martial-arts-bg.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  .events-section {
+    background: url('martial-arts-event.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  .recent-activities-section {
+    background: url('martial-arts-activity.jpg') no-repeat center center;
+    background-size: cover;
+    color: #1a202c;
+  }
+  .quick-links-section {
+    background: url('martial-arts-links.jpg') no-repeat center center;
+    background-size: cover;
+  }
+  
