@@ -3,67 +3,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club About Us</title>
+  <title>Club Events</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css">
   <script src="script.js" defer></script>
 </head>
-<body class="bg-gray-50 text-gray-900">
-
-  <section class="py-16 bg-white text-gray-900">
+<body class="bg-gray-100 text-gray-900">
+  <section class="py-16 bg-white" id="upcoming-events">
     <div class="container mx-auto px-6">
-
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-red-600 mb-4">we</h2>
-        <p class="text-lg text-gray-700">
-          Established in 2005, our club has been dedicated to fostering community and empowering individuals through martial arts and self-defense. From humble beginnings, we’ve grown into a thriving group with members from all walks of life.
-        </p>
+      <h2 class="text-3xl font-bold text-center text-red-600 mb-8">Upcoming Events Calendar</h2>
+      <div class="bg-gray-100 p-8 rounded-lg shadow-lg flex justify-center items-center">
+        <input type="month" id="calendar" class="p-4 text-lg border border-gray-300 rounded-lg" onchange="loadEventsForMonth()" />
       </div>
+      <div id="events-list" class="mt-6 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
-      <div id="missionVisionSection" class="grid md:grid-cols-2 gap-10 mb-16 opacity-0 transition-opacity duration-700">
-        <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-bold text-red-600 mb-4">Our Mission</h3>
-          <p class="text-gray-700">
-            Our mission is to create a safe 
-        <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
-          <h3 class="text-2xl font-bold text-red-600 mb-4">Our Vision</h3>
-          <p class="text-gray-700">
-            We envision a world where everyone feels empowered, safe, and confident. Through continuous training, support, and community building, we aim to equip our members with the tools they need to protect themselves and others.
-          </p>
-        </div>
       </div>
-
-      <div class="text-center mb-8">
-        <h3 class="text-3xl font-bold text-red-600 mb-4">Meet the Team</h3>
-        <p class="text-gray-700">Get to know the people who make everything possible.</p>
+    </div>
+  </section>
+  <section class="py-16 bg-gray-50" id="event-details">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-red-600 mb-4">Event Details</h2>
+      <p class="text-lg text-gray-700 mb-8">Detailed information about upcoming events, including dates, locations, and speaker profiles.</p>
+      <div id="event-info" class="bg-white p-6 rounded-lg shadow-lg text-left">
+        <h3 class="text-2xl font-bold mb-2">Select an event from the calendar to see details.</h3>
+        <p class="text-gray-700">Click on any event to view its full description, agenda, and registration information.</p>
       </div>
-      <div class="grid md:grid-cols-3 gap-10">
-
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-          <img src="team-member1.jpg" alt="John Doe" class="w-24 h-24 mx-auto rounded-full mb-4">
-          <h4 class="text-xl font-bold text-gray-800">lorem</h4>
-          <p class="text-red-600 font-medium mb-2">Chief Instructor</p>
-          <p class="text-gray-600">lorem</p>
-          <button onclick="toggleBio('bio1')" class="text-blue-500 mt-2">View More</button>
-          <p id="bio1" class="text-gray-600 mt-2 hidden">He leads our training sessions with passion and a focus on safety and technique.</p>
+    </div>
+  </section>
+  <section class="py-16 bg-white" id="past-events">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-red-600 mb-8">Past Events Archive</h2>
+      <div class="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+          <h4 class="text-xl font-bold mb-2">Community Clean-Up</h4>
+          <p class="text-gray-700">Our last clean-up event brought together over 50 members to beautify our local park.</p>
+          <img src="cleanup.jpg" alt="Community Clean-Up" class="mt-4 rounded-lg">
         </div>
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-          <img src="team-member2.jpg" alt="Jane Smith" class="w-24 h-24 mx-auto rounded-full mb-4">
-          <h4 class="text-xl font-bold text-gray-800">mew</h4>
-          <p class="text-red-600 font-medium mb-2">Event Coordinator</p>
-          <p class="text-gray-600"></p>
-          <button onclick="toggleBio('bio2')" class="text-blue-500 mt-2">View More</button>
-          <p id="bio2" class="text-gray-600 mt-2 hidden">With a keen eye for detail, she keeps everything running smoothly.</p>
+        <div class="bg-gray-100 p-6 rounded-lg shadow-lg">
+          <h4 class="text-xl font-bold mb-2">Self-Defense Workshop</h4>
+          <p class="text-gray-700">A successful workshop with over 100 attendees learning essential self-defense skills.</p>
+          <img src="workshop.jpg" alt="Self-Defense Workshop" class="mt-4 rounded-lg">
         </div>
-        <div class="bg-white rounded-lg shadow-lg p-6 text-center">
-          <img src="team-member3.jpg" alt="Sam Lee" class="w-24 h-24 mx-auto rounded-full mb-4">
-          <h4 class="text-xl font-bold text-gray-800">wqe</h4>
-          <p class="text-red-600 font-medium mb-2">Membership Director</p>
-          <p class="text-gray-600"></p>
-          <button onclick="toggleBio('bio3')" class="text-blue-500 mt-2">View More</button>
-          <p id="bio3" class="text-gray-600 mt-2 hidden">Sam ensures every member feels welcomed and valued.</p>
-        </div>
-
       </div>
     </div>
   </section>
