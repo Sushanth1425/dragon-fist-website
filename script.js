@@ -47,4 +47,30 @@ const events = {
     document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
   }
 
-  
+// Show the button when scrolling down
+window.onscroll = function() {
+  const goUpButton = document.getElementById("goUp");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    goUpButton.classList.remove("hidden");
+  } else {
+    goUpButton.classList.add("hidden");
+  }
+};
+
+// Scroll to the top when the button is clicked
+document.getElementById("goUp").onclick = function() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
+// Toggle sidebar visibility
+const menuToggle = document.getElementById('menu-toggle');
+const sidebar = document.getElementById('sidebar');
+const closeSidebar = document.getElementById('close-sidebar');
+
+menuToggle.addEventListener('click', () => {
+  sidebar.classList.toggle('hidden');
+});
+
+closeSidebar.addEventListener('click', () => {
+  sidebar.classList.add('hidden');
+});
