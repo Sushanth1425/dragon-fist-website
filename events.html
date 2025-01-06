@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Club Events</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles1.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="bg-white text-gray-900">
+
+  <div id="header"></div>
+
+  <!-- Events Section -->
+  <section class="py-16 bg-white" id="upcoming-events">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-red-600 mb-8">Upcoming Events Calendar</h2>
+      <div class="bg-gray-100 p-8 rounded-lg shadow-lg flex justify-center items-center">
+        <select id="event-month" class="p-4 text-lg border border-gray-300 rounded-lg" onchange="loadEvents()">
+          <option value="">Select Month</option>
+          <option value="2025-01">January 2025</option>
+          <option value="2025-02">February 2025</option>
+          <option value="2025-03">March 2025</option>
+          <option value="2025-04">April 2025</option>
+          <option value="2025-05">May 2025</option>
+          <option value="2025-06">June 2025</option>
+        </select>        
+      </div>
+      <div id="events-list" class="mt-6 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Events will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Details Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center text-red-600 mb-8">Event Details</h2>
+      <div id="event-details" class="text-center bg-white p-6 rounded-lg shadow-lg">
+        <p class="text-gray-700">Select an event from the calendar to see details.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    const events = {
+      "2025-01": [
+        { title: "New Year Celebration", date: "2025-01-01", description: "Celebrate the New Year with us!" },
+        { title: "Martial Arts Workshop", date: "2025-01-15", description: "Learn from the best in this workshop." }
+      ],
+      "2025-02": [
+        { title: "Valentine's Day Special", date: "2025-02-14", description: "A day full of love and fun activities." }
+      ],
+      "2025-03": [],
+      "2025-04": [],
+      "2025-05": [],
+      "2025-06": [
+      { title: "TEST", date: "2025-05-14", description: "TESTING" }
+      ]
+    };
+
+    function loadEvents() {
+      const month = document.getElementById("event-month").value;
+      const eventsList = document.getElementById("events-list");
+      const eventDetails = document.getElementById("event-details");
+
+      eventsList.innerHTML = ""; // Clear the previous list
+      eventDetails.innerHTML = '<p class="text-gray-700">Select an event from the calendar to see details.</p>'; // Reset event details
+
+      if (events[month] && events[month].length > 0) {
+        events[month].forEach((event, index) => {
+          const eventCard = document.createElement("div");
+          eventCard.className = "bg-white p-6 rounded-lg shadow-lg cursor-pointer";
+          eventCard.innerHTML = `
+            <h4 class="text-xl font-bold mb-2">${event.title}</h4>
+            <p class="text-gray-700">${event.date}</p>
+            <p class="text-gray-700">${event.description}</p>
+          `;
+
+          eventCard.onclick = () => {
+            eventDetails.innerHTML = `
+              <h4 class="text-xl font-bold mb-2">${event.title}</h4>
+              <p class="text-gray-700">${event.date}</p>
+              <p class="text-gray-700">${event.description}</p>
+            `;
+          };
+
+          eventsList.appendChild(eventCard);
+        });
+      } else {
+        const noEventMessage = document.createElement("div");
+        noEventMessage.className = "text-center text-gray-700 p-6";
+        noEventMessage.textContent = "No events scheduled yet.";
+        eventsList.appendChild(noEventMessage);
+      }
+    }
+  </script>
+  <script>
+    async function loadPartials() {
+      const header = await fetch('header.html').then(res => res.text());
+      const footer = await fetch('footer.html').then(res => res.text());
+      document.getElementById('header').innerHTML = header;
+      document.getElementById('footer').innerHTML = footer;
+    }
+  
+    loadPartials();
+  </script>
+  
+<div id="footer"></div>
