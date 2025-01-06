@@ -62,15 +62,20 @@ document.getElementById("goUp").onclick = function() {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 };
 
-// Toggle sidebar visibility
+// Sidebar toggle functionality
 const menuToggle = document.getElementById('menu-toggle');
 const sidebar = document.getElementById('sidebar');
 const closeSidebar = document.getElementById('close-sidebar');
 
+// Open sidebar when menu toggle is clicked
 menuToggle.addEventListener('click', () => {
-  sidebar.classList.toggle('hidden');
+  sidebar.classList.remove('-translate-x-full');  // Slide in the sidebar
+  sidebar.classList.add('translate-x-0');         // Ensure the sidebar is visible
 });
 
+// Close sidebar when close button is clicked
 closeSidebar.addEventListener('click', () => {
-  sidebar.classList.add('hidden');
+  sidebar.classList.remove('translate-x-0');     // Slide out the sidebar
+  sidebar.classList.add('-translate-x-full');     // Ensure the sidebar is hidden
 });
+

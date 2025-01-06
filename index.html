@@ -3,146 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Club Events</title>
+  <title>Club Home Page</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.4/flowbite.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body class="bg-white text-gray-900">
 
-  <!-- Up Navigation Bar -->
-  <nav class="bg-gray-800 text-white py-4">
-    <div class="container mx-auto flex justify-between items-center px-6">
-      <div>
-        <button id="menu-toggle" class="focus:outline-none">
-          <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
-      <div class="hidden md:flex space-x-5">
-        <a href="index3.html" class="text-lg hover:text-red-600">Home</a>
-        <a href="index.html" class="text-lg hover:text-red-600">Events</a>
-        <a href="index5.html" class="text-lg hover:text-red-600">Training</a>
-      </div>
+  
+<div id="header"></div>
+
+  <section class="hero-section text-red-600 py-16">
+    <div class="container mx-auto px-6 text-center">
+      <h1 class="text-5xl font-bold mb-4">Welcome to Our Martial Arts Club</h1>
+      <p class="text-lg">Empowering individuals through self-defense and martial arts.</p>
     </div>
-  </nav>
+</section>
 
-  <!-- Events Section -->
-  <section class="py-16 bg-white" id="upcoming-events">
+  <section class="py-12 bg-white text-center">
     <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-red-600 mb-8">Upcoming Events Calendar</h2>
-      <div class="bg-gray-100 p-8 rounded-lg shadow-lg flex justify-center items-center">
-        <select id="event-month" class="p-4 text-lg border border-gray-300 rounded-lg" onchange="loadEvents()">
-          <option value="">Select Month</option>
-          <option value="2025-01">January 2025</option>
-          <option value="2025-02">February 2025</option>
-          <option value="2025-03">March 2025</option>
-          <option value="2025-04">April 2025</option>
-          <option value="2025-05">May 2025</option>
-          <option value="2025-06">June 2025</option>
-        </select>        
-      </div>
-      <div id="events-list" class="mt-6 grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Events will be dynamically loaded here -->
-      </div>
+      <h2 class="text-3xl font-bold mb-4 text-red-600">About Us</h2>
+      <p class="text-lg mb-6 text-gray-700">
+        Our club is dedicated to building confidence, community, and self-defense skills.
+        Embrace strength, discipline, and growth through martial arts training.
+      </p>
     </div>
   </section>
 
-  <!-- Event Details Section -->
-  <section class="py-16 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center text-red-600 mb-8">Event Details</h2>
-      <div id="event-details" class="text-center bg-white p-6 rounded-lg shadow-lg">
-        <p class="text-gray-700">Select an event from the calendar to see details.</p>
+  <section class="events-section py-12 bg-cover bg-center text-white">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Upcoming Events</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-red-700 p-6 rounded-lg shadow-lg bg-opacity-90">
+          <h3 class="text-xl font-bold mb-2">Self-Defense Workshop</h3>
+          <p class="mb-4">Learn self-defense techniques on <strong>October 21</strong> with expert trainers.</p>
+          <a href="https://forms.gle/WRGjKrZCz9e6wU9d9" class="bg-white text-red-700 py-2 px-4 rounded-lg hover:bg-gray-100 inline-block">Register</a>
+        </div>
+        <div class="bg-red-700 p-6 rounded-lg shadow-lg bg-opacity-90">
+          <h3 class="text-xl font-bold mb-2">Community Clean-Up</h3>
+          <p class="mb-4">Join us for a community clean-up day on <strong>November 5</strong>.</p>
+          <a href="https://forms.gle/MKed7vzjUtncZsvc7" class="bg-white text-red-700 py-2 px-4 rounded-lg hover:bg-gray-100 inline-block">Register</a>
+        </div>
+        <div class="bg-red-700 p-6 rounded-lg shadow-lg bg-opacity-90">
+          <h3 class="text-xl font-bold mb-2">Annual Club Meetup</h3>
+          <p class="mb-4">Our annual meet-up is scheduled for <strong>December 15</strong>. Be a part of it!</p>
+          <a href="https://forms.gle/51ijgHua56MsrnGYA" class="bg-white text-red-700 py-2 px-4 rounded-lg hover:bg-gray-100 inline-block">Register</a>
+        </div>
       </div>
     </div>
   </section>
+  
+  <section class="recent-activities-section py-12 text-gray-900">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6 text-red-600">Recent Activities</h2>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-gray-300 p-4 rounded-lg">
+          <img src="activity1.jpg" alt="Activity 1" class="rounded-md mb-4 w-full">
+          <p>Our recent self-defense session had over 100 participants!</p>
+        </div>
+        <div class="bg-gray-300 p-4 rounded-lg">
+          <img src="activity2.jpg" alt="Activity 2" class="rounded-md mb-4 w-full">
+          <p>We hosted a local park clean-up for community bonding.</p>
+        </div>
+        <div class="bg-gray-300 p-4 rounded-lg">
+          <img src="activity3.jpg" alt="Activity 3" class="rounded-md mb-4 w-full">
+          <p>The annual meetup inspired members with powerful discussions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="quick-links-section py-12 bg-gray-100 text-center">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-4 text-red-600">Quick Links</h2>
+      <div class="flex justify-center space-x-4">
+        <a href="index5.html" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Membership Sign-Up</a>
+        <a href="contact.html" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Contact Us</a>
+        <a href="sessions.html" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Self-Defense Sessions</a>
+      </div>
+    </div>
+  </section>
+  
 
   <script>
-    const events = {
-      "2025-01": [
-        { title: "New Year Celebration", date: "2025-01-01", description: "Celebrate the New Year with us!" },
-        { title: "Martial Arts Workshop", date: "2025-01-15", description: "Learn from the best in this workshop." }
-      ],
-      "2025-02": [
-        { title: "Valentine's Day Special", date: "2025-02-14", description: "A day full of love and fun activities." }
-      ],
-      "2025-03": [],
-      "2025-04": [],
-      "2025-05": [],
-      "2025-06": [
-      { title: "TEST", date: "2025-05-14", description: "TESTING" }
-      ]
-    };
-
-    function loadEvents() {
-      const month = document.getElementById("event-month").value;
-      const eventsList = document.getElementById("events-list");
-      const eventDetails = document.getElementById("event-details");
-
-      eventsList.innerHTML = ""; // Clear the previous list
-      eventDetails.innerHTML = '<p class="text-gray-700">Select an event from the calendar to see details.</p>'; // Reset event details
-
-      if (events[month] && events[month].length > 0) {
-        events[month].forEach((event, index) => {
-          const eventCard = document.createElement("div");
-          eventCard.className = "bg-white p-6 rounded-lg shadow-lg cursor-pointer";
-          eventCard.innerHTML = `
-            <h4 class="text-xl font-bold mb-2">${event.title}</h4>
-            <p class="text-gray-700">${event.date}</p>
-            <p class="text-gray-700">${event.description}</p>
-          `;
-
-          eventCard.onclick = () => {
-            eventDetails.innerHTML = `
-              <h4 class="text-xl font-bold mb-2">${event.title}</h4>
-              <p class="text-gray-700">${event.date}</p>
-              <p class="text-gray-700">${event.description}</p>
-            `;
-          };
-
-          eventsList.appendChild(eventCard);
-        });
-      } else {
-        const noEventMessage = document.createElement("div");
-        noEventMessage.className = "text-center text-gray-700 p-6";
-        noEventMessage.textContent = "No events scheduled yet.";
-        eventsList.appendChild(noEventMessage);
-      }
+    async function loadPartials() {
+      const header = await fetch('header.html').then(res => res.text());
+      const footer = await fetch('footer.html').then(res => res.text());
+      document.getElementById('header').innerHTML = header;
+      document.getElementById('footer').innerHTML = footer;
     }
+  
+    loadPartials();
   </script>
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8">
-      <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-start">
-          <div class="mb-4 md:mb-0">
-            <h3 class="text-lg font-bold">Dragon Fist Martial Arts</h3>
-            <p class="text-sm">Your club's tagline or description goes here.</p>
-          </div>
-          <div class="flex flex-col space-y-2 mb-4 md:mb-0">
-            <h4 class="font-bold">Quick Links</h4>
-            <a href="index3.html" class="hover:text-red-600">Home</a>
-            <a href="index4.html" class="hover:text-red-600">Membership</a>
-            <a href="index5.html" class="hover:text-red-600">Training</a>
-            <a href="index.html" class="hover:text-red-600">Events</a>
-            <a href="index6.html" class="hover:text-red-600">About Us</a>
-          </div>
-          <div class="flex flex-col space-y-2 mb-4 md:mb-0">
-            <h4 class="font-bold">Follow Us</h4>
-            <!-- <a href="#" class="hover:text-red-600">Facebook</a>
-            <a href="#" class="hover:text-red-600">Twitter</a> -->
-            <a href="https://www.instagram.com/dragon_fist_vitap/" class="hover:text-red-600">Instagram</a>
-          </div>
-        </div>
-        <div class="text-center mt-4">
-          <p class="text-sm">&copy; 2025 Dragon Fist Martial Arts. All rights reserved.</p>
-        </div>
-      </div>
-    </footer>
-  <!-- Go-Up Button -->
-  <button id="goUp" class="fixed bottom-5 right-5 bg-red-600 text-white p-3 rounded-full shadow-lg hover:bg-red-700 transition duration-300 hidden">
-    ↑
-  </button>
-    <script src="script.js" defer></script>
-</body>
-</html>
+  
+<div id="footer"></div>
