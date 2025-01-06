@@ -71,17 +71,46 @@
         </div>
       </div>
     </div>
-  </section>
-  <section class="quick-links-section py-12 bg-gray-100 text-center">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold mb-4 text-red-600">Quick Links</h2>
-      <div class="flex justify-center space-x-4">
-        <a href="index5.html" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Membership Sign-Up</a>
-        <a href="contact.html" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Contact Us</a>
-        <a href="sessions.html" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Self-Defense Sessions</a>
+    <section class="quick-links-section py-12 bg-gray-100 text-center">
+      <div class="container mx-auto px-6">
+        <h2 class="text-3xl font-bold mb-4 text-red-600">Quick Links</h2>
+        <div class="flex justify-center space-x-4">
+          <a href="index5.html" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Membership Sign-Up</a>
+          
+          <!-- Contact Us Button with Dropdown -->
+          <div class="relative">
+            <a href="javascript:void(0);" id="contactLink" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Contact Us</a>
+            <!-- Dropdown Menu -->
+            <div id="contactDropdown" class="absolute left-0 hidden bg-white shadow-lg rounded-lg mt-2 py-2">
+              <a href="https://www.linkedin.com/company/dragon-fist-martial-arts/" target="_blank" class="block px-6 py-2 text-red-600 hover:bg-gray-100">LinkedIn</a>
+              <a href="https://www.instagram.com/dragon_fist_vitap/" target="_blank" class="block px-6 py-2 text-red-600 hover:bg-gray-100">Instagram</a>
+            </div>
+          </div>
+          
+          <a href="sessions.html" class="bg-red-600 text-white py-2 px-6 rounded-lg hover:bg-red-700">Self-Defense Sessions</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+    
+    <script>
+      // Get the Contact Us link and the dropdown menu
+      const contactLink = document.getElementById('contactLink');
+      const contactDropdown = document.getElementById('contactDropdown');
+    
+      // Toggle dropdown visibility on click
+      contactLink.addEventListener('click', function() {
+        contactDropdown.classList.toggle('hidden');
+      });
+    
+      // Close the dropdown if clicked outside
+      document.addEventListener('click', function(event) {
+        if (!contactLink.contains(event.target) && !contactDropdown.contains(event.target)) {
+          contactDropdown.classList.add('hidden');
+        }
+      });
+    </script>
+    
+  
   
 
   <script>
