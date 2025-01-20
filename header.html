@@ -3,28 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>header</title>
+    <title>Header</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-100">
 
-    <!-- Up Navigation Bar -->
     <nav class="bg-gray-800 text-white py-4">
-        <div class="container mx-auto flex justify-between items-center px-6">
-            <!-- Hamburger Menu Icon -->
-            <div>
-                <button id="menu-toggle" class="focus:outline-none">
-                   
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-            
-            <!-- Training Link -->
             <div class="hidden md:flex space-x-5">
-                <a href="index.html" class="block rounded-md px-4 py-3 text-base font-mono text-white-400 hover:bg-red-700 hover:text-red transition duration-150 ease-in-out ">Home</a>
-                <a href="events.html" class="block rounded-md px-4 py-3 text-base font-mono text-white-400 hover:bg-red-700 hover:text-red transition duration-150 ease-in-out">Events</a>
-                <a href="training.html" class="block rounded-md px-4 py-3 text-base font-mono text-white-400 hover:bg-red-700 hover:text-red">Training</a>
+                <a href="index.html" class="block rounded-md px-4 py-3 text-base font-mono text-white hover:bg-red-700 transition duration-150 ease-in-out">Home</a>
+                <a href="events.html" class="block rounded-md px-4 py-3 text-base font-mono text-white hover:bg-red-700 transition duration-150 ease-in-out">Events</a>
+                <a href="training.html" class="block rounded-md px-4 py-3 text-base font-mono text-white hover:bg-red-700 transition duration-150 ease-in-out">Training</a>
             </div>
             <div class="md:hidden">
                 <a href="training.html" class="text-lg hover:text-red-600">Training</a>
@@ -32,7 +20,6 @@
         </div>
     </nav>
 
-    <!-- Sidebar (hidden by default) -->
     <div id="sidebar" class="fixed inset-0 bg-gray-800 bg-opacity-75 z-50 hidden">
         <div class="flex justify-end p-4">
             <button id="close-sidebar" class="text-white">
@@ -42,11 +29,11 @@
             </button>
         </div>
         <div class="flex flex-col items-center mt-10">
-            <a href="index.html" class="text-white text-lg hover:text-red-600 mb-4">Home</a>
-            <a href="membership.html" class="text-white text-lg hover:text-red-600 mb-4">Membership</a>
-            <a href="training.html" class="text-white text-lg hover:text-red-600 mb-4">Training</a>
-            <a href="events.html" class="text-white text-lg hover:text-red-600 mb-4">Events</a>
-            <a href="aboutus.html" class="text-white text-lg hover:text-red-600 mb-4">About Us</a>
+            <a href="index.html" class="text-white text-lg hover:text-red-600 mb-4 transition duration-150 ease-in-out">Home</a>
+            <a href="membership.html" class="text-white text-lg hover:text-red-600 mb-4 transition duration-150 ease-in-out">Membership</a>
+            <a href="training.html" class="text-white text-lg hover:text-red-600 mb-4 transition duration-150 ease-in-out">Training</a>
+            <a href="events.html" class="text-white text-lg hover:text-red-600 mb-4 transition duration-150 ease-in-out">Events</a>
+            <a href="aboutus.html" class="text-white text-lg hover:text-red-600 mb-4 transition duration-150 ease-in-out">About Us</a>
         </div>
     </div>
 
@@ -56,20 +43,20 @@
             const sidebar = document.getElementById('sidebar');
             const closeSidebar = document.getElementById('close-sidebar');
 
-            // Show sidebar when hamburger menu is clicked
+            // Show sidebar when menu toggle is clicked
             menuToggle.addEventListener('click', () => {
-                sidebar.classList.remove('hidden'); // Remove hidden class to show sidebar
+                sidebar.classList.remove('hidden'); 
             });
 
             // Hide sidebar when close button is clicked
             closeSidebar.addEventListener('click', () => {
-                sidebar.classList.add('hidden'); // Add hidden class to hide sidebar
+                sidebar.classList.add('hidden'); 
             });
 
             // Hide sidebar when clicking outside of it
             document.addEventListener('click', (event) => {
                 if (!sidebar.contains(event.target) && event.target !== menuToggle) {
-                    sidebar.classList.add('hidden'); // Add hidden class to hide sidebar
+                    sidebar.classList.add('hidden'); 
                 }
             });
         });
